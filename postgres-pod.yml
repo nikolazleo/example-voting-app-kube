@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   # Name of Pod
+  name: postgres-pod
+  labels:
+    # Name of Pod Label
+    name: postgres-pod
+    # Name of application running within the Pod
+    app: demo-voting-app
+
+spec:
+  containers:
+      # Container name
+    - name: postgres
+      image: postgres:9.4
+      ports: 
+          # Port container uses to connect to the Service
+        - containerPort: 5432
